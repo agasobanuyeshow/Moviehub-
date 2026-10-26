@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MovieHub</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #111;
+            color: white;
+        }
+
+        header {
+            padding: 20px;
+            background: #222;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .movie {
+            margin: 20px;
+            padding: 15px;
+            background: #222;
+            border-radius: 10px;
+        }
+
+        video {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header id="home"><nav style="background:#000; padding:15px; text-align:center;">
+    <a href="#home" style="color:white; margin:15px; text-decoration:none;">🏠 Home</a>
+    <a href="#movies" style="color:white; margin:15px; text-decoration:none;">🎬 Movies</a>
+</>
+    <h1>🎬 MovieHub</h1><h2>⭐ Featured Movie</h2>
+<p>Watch our featured movie below!</p>
+    <p>Watch my movies</p>
+
+    <input
+        type="text"
+        id="search"
+        placeholder="🔍 Search movies..."
+        onkeyup="searchMovies()"
+        style="padding:12px; width:80%; max-width:400px; border-radius:8px; border:none; margin-top:15px;"
+    >
+
+
+<h2 id="movies">🎬 Movie 1</h2><img src="Images/movie1.jpg"
+     style="width:100%; height:180px; object-fit:cover; border-radius:10px;">
+<p>A movie you can watch directly on MovieHub.</p>
+
+    <button onclick="document.querySelector('video').play()"
+style="background:#e50914; color:white; border:none; padding:12px 20px; border-radius:8px; font-size:16px; margin:10px 0;">
+    ▶️ Watch Movie
+    </button><video controls width="100%">
+        <source src="Videos/movie1.mp4" type="video/mp4">
+a href="Videos/movie1.mp4" download>   
+    </video>
+  <a href="Videos/movie1.mp4" download>
+    <button>⬇️ Download Movie</button>
+   </>    
+  
+      
+
+  
+  
+
+  function searchMovies() {
+    let search = document.getElementById("search").value.toLowerCase();
+    let movies = document.querySelectorAll(".movie");
+
+    movies.forEach(function(movie) {
+        let title = movie.innerText.toLowerCase();
+
+        if (title.includes(search)) {
+            movie.style.display = "block";
+        } else {
+            movie.style.display = "none";
+        }
+    });
+
+
+  <div class="movie">
+    <h2>🎬 Movie 2</h2>
+
+    <p>Another movie on MovieHub.</p>
+
+    <video controls width="100%">
+        <source src="Videos/movie2.mp4" type="video/mp4">
+    </video>
+
+    <a href="Videos/movie2.mp4" download>
+        <button>⬇️ Download Movie 2</button>
+    </a>
+  </div>
+</body>
+</html>
